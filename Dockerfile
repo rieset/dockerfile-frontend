@@ -1,15 +1,14 @@
 FROM node:14-alpine as source
 
-LABEL authors="Albert Iblyaminov <rieset@yandex.ru>, Max Mishin <max@mishin.io>" \
-      org.label-schema.vendor="Untld Service" \
-      org.label-schema.name="Untld Service Image" \
-      org.label-schema.description="Untld Service" \
-      org.label-schema.url="https://untld.pro" \
+LABEL authors="Albert Iblyaminov <rieset@yandex.ru>" \
+      org.label-schema.vendor="Frontend Service" \
+      org.label-schema.name="Frontend Service Image" \
+      org.label-schema.description="Frontend  Service" \
+      org.label-schema.url="https://site.ru" \
       org.label-schema.schema-version="1.0"
 
 ENV BUILD_DEPS="" \
     RUNTIME_DEPS="" \
-#    RUNTIME_DEPS="chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont" \
     NODE_ENV="production" \
     NODE_OPTIONS="--max_old_space_size=2048"
 
@@ -37,7 +36,7 @@ ENV NODE_ENV="production" \
     USER="app" \
     FRONTEND_INSTANCES="2" \
     FRONTEND_MEMORY="230M" \
-    LABEL="Untld frontend"
+    LABEL="Frontend"
 
 WORKDIR /home/$USER
 
